@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<th:block th:include = "fragments/include"/>
+</head>
+<body>
+  <div class="container-scroller">
+    <!-- partial:partials/_navbar.html -->
+  	<th:block th:include = "fragments/Studentheader"/>
+      <!-- partial -->
+      <div class="main-panel">
+        <div class="content-wrapper">
+        <div>
+        	<h1>
+        	-------------------------------------------- Student Information -------------------------------------------
+        	</h1>
+			<label>
+				<b> User ID : </b><span th:text="${user.getUserID()}"></span> 
+			</label>
+			<br>
+	        <br>
+	        <br>
+	        <label>
+				<b> First Name : </b><span th:text="${user.getFirstName()}"></span> 
+			</label>
+			<br>
+	        <br>
+	        <br>
+	        <label>
+				<b> Last Name : </b><span th:text="${user.getLastName()}"></span>
+			</label>
+	       	<br>
+	        <br>
+	        <br>
+	        
+	       <label>
+				 <b> Entry Date :</b> <span th:text="${user.getEntryDate()}"></span> 
+			</label>
+			<br>
+	        <br>
+	        <br>
+	        
+	        <label>
+				 <b> Entry : </b><span th:text="${user.getEntry()}"></span>
+			</label>
+			<br>
+	        <br>
+	        <br>
+	        
+	        <label>
+				<b>Track :</b> <span th:text="${user.getTrack()}"></span>
+			</label>
+			
+	    </div>    
+        <!-- content-wrapper ends -->
+        <!-- partial:partials/_footer.html -->
+        <!-- partial -->
+      </div>
+      <!-- main-panel ends -->
+    </div>
+    <!-- page-body-wrapper ends -->
+  </div>
+  <!-- container-scroller -->
+
+  <!-- plugins:js -->
+  <script src="vendors/js/vendor.bundle.base.js"></script>
+  <script src="vendors/js/vendor.bundle.addons.js"></script>
+  <!-- endinject -->
+  <!-- Plugin js for this page-->
+  <!-- End plugin js for this page-->
+  <!-- inject:js -->
+  <script src="js/off-canvas.js"></script>
+  <script src="js/misc.js"></script>
+  <!-- endinject -->
+  <!-- Custom js for this page-->
+  <script src="js/dashboard.js"></script>
+  <!-- End custom js for this page-->
+</body>
+
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<th:block th:include = "fragments/include"/>
+</head>
+<body>
+  <div class="container-scroller">
+    <!-- partial:partials/_navbar.html -->
+    <th:block th:include = "fragments/header"/>
+      <!-- partial -->
+      <div class="main-panel">
+        <div class="content-wrapper">
+
+           <div class="row">
+            <div class="col-12 grid-margin stretch-card">
+              <div class="card">
+                <div class="card-body">
+                  <h4 class="card-title">Add Course</h4>
+                  <br>
+                  <br>
+                  <form class="forms-sample" th:action="@{/savenewcourse}" th:object="${course}" method="post">
+		                    <div class="form-group">
+		                      <label for="exampleInputName1">Course Code</label>
+		                      <input type="text" class="form-control" id="CourseCode" name="CourseCode" placeholder="Course Code">
+		                    </div>
+		                    <div class="form-group">
+		                      <label for="exampleInputEmail3">Course Name</label>
+		                      <input type="text" class="form-control" id="CourseName" name="CourseName" placeholder="Course Name">
+		                    </div>
+		                    <div class="form-group">
+		                      <label for="exampleInputPassword4">Course Description</label>
+		                      <textarea  class="form-control" id="CourseDescription" name="CourseDescription" placeholder="Course Description"></textarea>
+		                    </div>
+		                    <div class="form-group">
+		                      <label for="exampleInputPassword4">Course Credit</label>
+		                      <input type="text" class="form-control" id="CourseCredit" name="CourseCredit" placeholder="CourseCredit">
+		                    </div>
+		                    <br>
+		                    <button type="submit" value="Submit" class="btn btn-gradient-primary mr-2">Submit</button>
+		                    <p th:text="${Success}"></p>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- content-wrapper ends -->
+        <!-- partial:partials/_footer.html -->
+        <!-- partial -->
+      </div>
+      <!-- main-panel ends -->
+    </div>
+    <!-- page-body-wrapper ends -->
+  </div>
+  <!-- container-scroller -->
+
+  <!-- plugins:js -->
+  <script src="vendors/js/vendor.bundle.base.js"></script>
+  <script src="vendors/js/vendor.bundle.addons.js"></script>
+  <!-- endinject -->
+  <!-- Plugin js for this page-->
+  <!-- End plugin js for this page-->
+  <!-- inject:js -->
+  <script src="js/off-canvas.js"></script>
+  <script src="js/misc.js"></script>
+  <!-- endinject -->
+  <!-- Custom js for this page-->
+  <script src="js/dashboard.js"></script>
+  <!-- End custom js for this page-->
+</body>
+
+</html>

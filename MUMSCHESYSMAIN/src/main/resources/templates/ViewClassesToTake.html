@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+ <th:block th:include = "fragments/include"/>
+</head>
+<body>
+  <div class="container-scroller">
+    <!-- partial:partials/_navbar.html -->
+    <th:block th:include = "fragments/Studentheader"/>
+      <!-- partial -->
+      <div class="main-panel">
+        <div class="content-wrapper">
+
+           <div class="row">
+            <div class="col-lg-12 grid-margin stretch-card">
+              <div class="card">
+                <div class="card-body">
+                  <span  class="card-title">Classes To Take </span>
+                  	<table class="table table-striped" >
+	                    <thead>
+	                      <tr>
+	                        <th>
+	                         <b>Class Id</b> 
+	                        </th>
+	                        <th>
+	                          <b>Course Name</b>
+	                        </th>
+	                        <th>
+	                          <b>Number Of Students</b>
+	                        </th>
+	                        <th>
+	                        	<b>Course Professor</b>
+	                        </th>
+	                        <th>
+	                        	<b>Start Month</b>
+	                        </th>
+	                        <th>
+	                        	<b>Drop Course</b>
+	                        </th>
+	                     </tr>
+	                    </thead>
+	                    <tbody>
+	                      <tr th:each="class : ${classes}">
+	                        <td class="py-1" th:text="${class.CourseClassId}">
+	                        </td>
+	                        <td th:text="${class.getCourse().getCourseName()}">
+	                        </td>
+	                        <td th:text="${25 -class.availableseats }">
+	                        </td>
+	                        <td th:text="${class.getProfessor()!= null} ? ${class.getProfessor().getLastName()} : 'Not Assigned'">
+	                        </td >
+	                        <td th:text="${class.getBlock().startdate()}">
+	                        <td>
+		                           <a th:href="@{|/dropcourse/course/${class.CourseClassId}}"  class="btn btn-gradient-primary mr-2">Drop class</a>     	
+		                   </td>				
+	                       </tr>
+	                      </tbody>
+	                  </table>
+                 	</div>
+                 </div>             
+               </div>
+             </div>
+           </div>
+          </div>
+       
+        </div>
+        <!-- content-wrapper ends -->
+        <!-- partial:partials/_footer.html -->
+        <!-- partial -->
+      </div>
+      <!-- main-panel ends -->
+    </div>
+    <!-- page-body-wrapper ends -->
+  </div>
+  <!-- container-scroller -->
+
+  <!-- plugins:js -->
+  <script src="vendors/js/vendor.bundle.base.js"></script>
+  <script src="vendors/js/vendor.bundle.addons.js"></script>
+  <!-- endinject -->
+  <!-- Plugin js for this page-->
+  <!-- End plugin js for this page-->
+  <!-- inject:js -->
+  <script src="js/off-canvas.js"></script>
+  <script src="js/misc.js"></script>
+  <!-- endinject -->
+  <!-- Custom js for this page-->
+  <script src="js/dashboard.js"></script>
+  <!-- End custom js for this page-->
+</body>
+
+</html>
